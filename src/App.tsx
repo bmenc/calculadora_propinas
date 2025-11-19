@@ -7,7 +7,7 @@ import useOrder from "./hooks/useOrder";
 
 function App() {
   console.log(menuItems);
-  const { order, addItem, removeItem } = useOrder();
+  const { order, addItem, removeItem, tip, setTip } = useOrder();
 
   return (
     <>
@@ -33,7 +33,9 @@ function App() {
             removeItem={removeItem}
           />
 
-            <TipPercentageForm/>
+            <TipPercentageForm
+              setTip={setTip}
+            />
 
           <OrderTotals
             order={order}

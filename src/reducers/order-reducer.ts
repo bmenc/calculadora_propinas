@@ -16,7 +16,7 @@ export const initialState: OrderState = {
   tip: 0
 }
 
-export const  orderReducer = (
+export const orderReducer = (
   state: OrderState = initialState,
   action: OrderActions
 ) => {
@@ -45,14 +45,18 @@ export const  orderReducer = (
     case "place-order": {
       return {
         ...state,
+        order: [],
+        tip: 0
       }
     }
     case "add-tip": {
+      const tip = action.payload.value;
       return {
         ...state,
+        tip
       }
     }
-  
+
     default: return state;
   }
 }

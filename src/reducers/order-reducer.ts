@@ -22,7 +22,6 @@ export const  orderReducer = (
 ) => {
   switch (action.type) {
     case "add-item": {
-
       const itemExist = state.order.find(orderItem => orderItem.id === action.payload.item.id);
       let order: OrderItem[] = [];
       if (itemExist) {
@@ -37,8 +36,10 @@ export const  orderReducer = (
       }
     }
     case "remove-item": {
+      const order = state.order.filter(item => item.id !== action.payload.id);
       return {
         ...state,
+        order
       }
     }
     case "place-order": {

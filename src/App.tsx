@@ -34,7 +34,7 @@ function App() {
             <>
               <OrderContents
                 order={state.order}
-                removeItem={removeItem}
+                dispatch={dispatch}
               />
               <TipPercentageForm
                 setTip={setTip}
